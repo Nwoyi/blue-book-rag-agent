@@ -131,14 +131,24 @@ Be precise. Cite specific listing criteria by letter (A, B, C, D) and sub-criter
 Do NOT hallucinate criteria. Only reference criteria that appear in the Blue Book text provided to you. If you're unsure about a criterion, say so."""
 
 
+# Global cache for ChromaDB components to save memory and initialization time
+_embedding_fn = None
+_chroma_client = None
+_collection = None
+
 def get_chroma_collection():
-    """Get the ChromaDB collection with the correct embedding function."""
-    embedding_fn = SentenceTransformerEmbeddingFunction(model_name=EMBEDDING_MODEL)
-    client = chromadb.PersistentClient(path=CHROMA_DB_PATH)
-    return client.get_collection(
-        name=CHROMA_COLLECTION_NAME,
-        embedding_function=embedding_fn,
-    )
+    """Get the ChromaDB collection using a singleton pattern to save memory."""
+    global _embedding_fn, _chroma_client, _collection
+    
+    if _collection is None:
+        # Initialize only once per process
+        _embedding_fn = SentenceTransformerEmbeddingFunction(model_name=EMBEDDING_MODEL)
+        _chroma_client = chromadb.PersistentClient(path=CHROMA_DB_PATH)
+        _collection = _chroma_client.get_collection(
+            name=CHROMA_COLLECTION_NAME,
+            embedding_function=_embedding_fn,
+        )
+    return _collection
 
 
 def search_blue_book(query: str, top_k: int = TOP_K) -> list[dict]:
