@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Blue Book Analysis Tool</title>
+    <link rel="stylesheet" href="/static/style.css">
+</head>
+<body>
+    <header>
+        <h1>Blue Book Analysis Tool</h1>
+        <p class="subtitle">SSDI Listing Matcher</p>
+    </header>
+
+    <main>
+        <section class="input-section">
+            <label for="medical-input">Client's Medical Findings</label>
+            <textarea
+                id="medical-input"
+                placeholder="Paste the client's medical findings, diagnoses, symptoms, test results, and functional limitations here...
+
+Example: Patient is a 52-year-old male with chronic low back pain for 3 years. MRI of lumbar spine shows L4-L5 disc herniation with left L5 nerve root compression. Physical exam: positive straight leg raise at 30 degrees..."
+                rows="12"
+            ></textarea>
+            <div class="input-footer">
+                <span id="char-count" class="char-count">0 characters</span>
+                <button id="analyze-btn" onclick="analyzeFindings()">Analyze</button>
+            </div>
+        </section>
+
+        <section id="loading" class="hidden">
+            <div class="spinner"></div>
+            <p>Analyzing medical findings against Blue Book listings...</p>
+            <p class="subtext">This typically takes 30-60 seconds</p>
+        </section>
+
+        <section id="error" class="hidden">
+            <div class="error-box">
+                <p class="error-title">Analysis Error</p>
+                <p id="error-message"></p>
+            </div>
+        </section>
+
+        <section id="results" class="hidden">
+            <div class="results-header">
+                <h2>Analysis Results</h2>
+                <div class="results-meta">
+                    <span id="listing-count"></span>
+                    <span id="doc-count"></span>
+                </div>
+            </div>
+            <div id="matched-badges" class="badges"></div>
+            <div id="results-content" class="results-content"></div>
+
+            <div id="sources" class="sources-section hidden">
+                <h3>Verify Sources</h3>
+                <p class="sources-desc">Click any link below to view the original SSA Blue Book listing and verify the analysis.</p>
+                <ul id="sources-list"></ul>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <p>This tool is a research aid for attorneys. It does not constitute legal advice.
+        All analysis must be independently verified.</p>
+    </footer>
+
+    <script src="/static/script.js"></script>
+</body>
+</html>

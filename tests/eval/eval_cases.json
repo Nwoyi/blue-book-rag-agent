@@ -1,0 +1,74 @@
+[
+  {
+    "id": "vision_retinopathy",
+    "description": "Diabetic retinopathy with visual acuity loss",
+    "medical_findings": "62-year-old female, former secretary. Diagnosed with diabetic retinopathy bilateral. Best corrected visual acuity: 20/200 OD, 20/100 OS. Peripheral visual field loss documented on Goldmann perimetry. Diabetes mellitus type 2, A1c 8.5%. No hearing complaints.",
+    "expected_listings": ["2.02", "2.03", "2.04"],
+    "unexpected_listings": ["2.10", "2.11"],
+    "expected_age_category": "closely approaching retirement age",
+    "contamination_terms": ["audiometric", "otoscopic", "hearing evaluation"]
+  },
+  {
+    "id": "hearing_bilateral",
+    "description": "Bilateral sensorineural hearing loss",
+    "medical_findings": "48-year-old male, former factory worker. Bilateral sensorineural hearing loss. Word recognition scores: 40% right ear, 36% left ear. Uses hearing aids with limited benefit. Speech discrimination poor bilaterally. No vision complaints.",
+    "expected_listings": ["2.10", "2.11"],
+    "unexpected_listings": ["2.02", "2.03", "2.04"],
+    "expected_age_category": "younger individual",
+    "contamination_terms": []
+  },
+  {
+    "id": "spine_herniation",
+    "description": "Lumbar disc herniation with nerve root compression",
+    "medical_findings": "55-year-old male, former construction worker. MRI shows L4-L5 disc herniation with nerve root compression. Positive straight leg raise bilaterally. Uses a walker for ambulation. Chronic lower back pain with radiculopathy bilateral lower extremities.",
+    "expected_listings": ["1.15"],
+    "unexpected_listings": [],
+    "expected_age_category": "advanced age",
+    "contamination_terms": []
+  },
+  {
+    "id": "cardiac_chf",
+    "description": "Congestive heart failure NYHA Class III",
+    "medical_findings": "52-year-old male, former warehouse worker. Diagnosed with congestive heart failure NYHA Class III. Ejection fraction 30%. On maximum medical therapy including ACE inhibitor, beta blocker, diuretic. Experiences dyspnea on minimal exertion.",
+    "expected_listings": ["4.02"],
+    "unexpected_listings": [],
+    "expected_age_category": "closely approaching advanced age",
+    "contamination_terms": []
+  },
+  {
+    "id": "multi_system_diabetes",
+    "description": "Multi-system diabetes complications",
+    "medical_findings": "58-year-old female, former retail worker. Type 2 diabetes mellitus with A1c 9.2%. Diabetic retinopathy with visual acuity 20/100 bilateral. Peripheral neuropathy bilateral lower extremities with decreased sensation. CKD Stage 4 with eGFR 22, considering dialysis. Chronic fatigue and inability to stand more than 10 minutes.",
+    "expected_listings": ["2.02", "2.03", "2.04", "11.14"],
+    "unexpected_listings": [],
+    "expected_age_category": "advanced age",
+    "contamination_terms": []
+  },
+  {
+    "id": "mental_depression",
+    "description": "Major depressive disorder with anxiety and PTSD",
+    "medical_findings": "40-year-old female, former teacher. Major depressive disorder recurrent severe with anxiety. PTSD from childhood trauma. GAF score 42. Multiple psychiatric hospitalizations. On Zoloft, Xanax, Prazosin. Cannot maintain attention or social functioning. Withdrawn from social activities.",
+    "expected_listings": ["12.04", "12.06", "12.15"],
+    "unexpected_listings": [],
+    "expected_age_category": "younger individual",
+    "contamination_terms": []
+  },
+  {
+    "id": "respiratory_copd",
+    "description": "COPD with reduced FEV1",
+    "medical_findings": "63-year-old male, former mechanic. Severe COPD with FEV1 1.05 liters (35% predicted). On continuous home oxygen 2L/min. Former 40 pack-year smoker. Frequent exacerbations requiring hospitalization. Cannot walk more than one block without severe dyspnea.",
+    "expected_listings": ["3.02"],
+    "unexpected_listings": [],
+    "expected_age_category": "closely approaching retirement age",
+    "contamination_terms": []
+  },
+  {
+    "id": "cancer_lymphoma",
+    "description": "Non-Hodgkin lymphoma undergoing chemotherapy",
+    "medical_findings": "45-year-old female, former office manager. Diagnosed with diffuse large B-cell Non-Hodgkin lymphoma stage IIIB. Currently undergoing R-CHOP chemotherapy cycle 4 of 6. Significant fatigue, nausea, immunosuppression. Unable to work due to treatment side effects and infection risk.",
+    "expected_listings": ["13.05"],
+    "unexpected_listings": [],
+    "expected_age_category": "younger individual",
+    "contamination_terms": []
+  }
+]
